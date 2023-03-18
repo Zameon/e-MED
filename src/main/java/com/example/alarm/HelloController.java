@@ -189,25 +189,12 @@ public class HelloController implements Initializable {
         // set the scene
         stage.setScene(scene);
 
-        try {
-            String path = getClass().getResource("/who-let-the-dogs-out-4720.mp3").toURI().toString();
-
-
-            //Instantiating Media class
-            Media media = new Media(path);
-
-            //Instantiating MediaPlayer class
-            MediaPlayer mediaPlayer = new MediaPlayer(media);
-
-            //by setting this property to true, the audio will be played
-            mediaPlayer.setAutoPlay(true);
-        }
-        catch(URISyntaxException e)
-        {
-            e.printStackTrace();
-        }
+        Media ple = new Media(new File("who-let-the-dogs-out-4720.mp3").toURI().toString());
+        MediaPlayer mp = new MediaPlayer(ple);
+        mp.play();
 
         stage.show();
+        stage.setOnCloseRequest( eevent -> {mp.stop();} );
 
     }
 
@@ -348,12 +335,19 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    protected void onDonePressed()
+    protected void onDonePressed(ActionEvent event) throws IOException
     {
         DBConn db = new DBConn();
         System.out.println(alarmTime.getText());
         db.insertval(medicinename.getText(), alarmTime.getText(), Integer.parseInt(dosage.getText()));
+        Node root = (Node) event . getSource () ;
+        Stage myStage = ( Stage ) root . getScene () . getWindow () ;
+        FXMLLoader fxmlLoader = new FXMLLoader ( HelloController.class.getResource ("alarmview.fxml") ) ;
+        Scene as = new Scene ( fxmlLoader.load() ) ;
+        myStage . setScene ( as ) ;
+        myStage . show () ;
     }
+
 
 
 
