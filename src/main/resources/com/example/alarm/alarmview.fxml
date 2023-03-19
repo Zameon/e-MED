@@ -9,9 +9,9 @@
 
 <AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alarm.AlarmControl">
    <children>
-      <Label alignment="CENTER" layoutY="-2.0" prefHeight="94.0" prefWidth="720.0" style="-fx-background-color: #dab7dc;" text="Reminders" textFill="WHITE">
+      <Label prefHeight="94.0" prefWidth="720.0" style="-fx-background-color: white;" text="Reminders" textFill="#71449c">
          <font>
-            <Font name="Century" size="24.0" />
+            <Font name="AmdtSymbols" size="24.0" />
          </font>
       </Label>
       <Button alignment="CENTER" layoutX="591.0" layoutY="426.0" mnemonicParsing="false" onAction="#onAddNewPressed" prefHeight="39.0" prefWidth="108.0" style="-fx-background-color: purple;" text=" Add new" textFill="#fcfbfb">
@@ -20,9 +20,9 @@
          </font>
       </Button>
       <Label fx:id="noDatatext" disable="true" layoutX="286.0" layoutY="144.0" />
-      <ScrollPane layoutY="92.0" prefHeight="322.0" prefWidth="720.0">
+      <ScrollPane layoutY="92.0" prefHeight="322.0" prefWidth="720.0" stylesheets="@style.css">
          <content>
-            <VBox fx:id="pnItems" prefHeight="246.0" prefWidth="719.0" />
+            <VBox fx:id="pnItems" prefHeight="321.0" prefWidth="719.0" style="-fx-background-color: #f9fcfc94;" stylesheets="@style.css" />
          </content>
       </ScrollPane>
    </children>

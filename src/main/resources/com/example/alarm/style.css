@@ -12,7 +12,7 @@
 }
 
 .scroll-pane {
-    -fx-background-color: #02030A;
+    -fx-background-color: rgba(190, 179, 208, 0.37);
 }
 
 .scroll-bar:horizontal, .scroll-bar:vertical{
@@ -33,7 +33,7 @@
 
 .scroll-bar:horizontal .thumb,
 .scroll-bar:vertical .thumb {
-    -fx-background-color: #10165F;
+    -fx-background-color: rgba(96, 74, 117, 0.48);
     -fx-background-radius: 5em;
 }
 
